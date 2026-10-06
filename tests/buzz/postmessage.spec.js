@@ -1,0 +1,25 @@
+import { test, expect } from '@playwright/test';
+
+import logindata from "../../test data/login.json"
+import postdata from "../../test data/buzz/buzzpost.json"
+
+test('create  a post', async ({ page }) => {
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.getByRole('textbox', { name: 'Username' }).fill(logindata.username);
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill(logindata.password);
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.getByRole('link', { name: 'Buzz' }).click();
+  await page.getByRole('textbox', { name: 'What\'s on your mind?' }).click();
+  await page.getByRole('textbox', { name: 'What\'s on your mind?' }).fill(postdata.message);
+  await page.getByRole('button', { name: 'Post', exact: true }).click();
+});
+test.only ('get started link', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+
+  // Click the get started link.
+  await page.getByRole('link', { name: 'Get started' }).click();
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+});
