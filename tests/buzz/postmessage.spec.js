@@ -14,7 +14,7 @@ test('create  a post', async ({ page }) => {
   await page.getByRole('textbox', { name: 'What\'s on your mind?' }).fill(postdata.message);
   await page.getByRole('button', { name: 'Post', exact: true }).click();
 });
-test.only ('get started link', async ({ page }) => {
+test('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Click the get started link.
