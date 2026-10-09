@@ -26,10 +26,10 @@ test('verify admin can add job title', async ({ page }) => {
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
 
   logStep('Verifying dashboard is visible');
-  await expect(page.getByText('Time at Work',{ exact:false})).toBeVisible();
+  await expect(page).toHaveText(/dashboard/);
 
   logStep('Opening Admin module');
- //await page.getByRole('link', { name: 'Admin' }).click();
+ await page.getByRole('link', { name: 'Admin' }).click();
 
   logStep('Opening system users page');
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');
@@ -84,8 +84,8 @@ test('test', async ({ page }) => {
   logStep('Clicking login button');
   await page.getByRole('button', { name: 'Login' }).click();
 
-  logStep('Navigating to dashboard');
-  await page.waitForURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
+  logStep('Verifying dashboard is visible');
+  await expect(page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
 
   logStep('Verifying dashboard is visible');
   await expect(page.getByText('Time at Work',{ exact:false })).toBeVisible();
