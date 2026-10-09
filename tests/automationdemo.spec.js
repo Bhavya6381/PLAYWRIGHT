@@ -12,7 +12,7 @@ test('verify registration with valid credentials', async ({ page }) => {
   await page.locator('input[value="Male"]').check();
   await page.locator('#checkbox1').check();
  await page.locator('#msdd').click();
-  await page.locator('.ui-menu-item').filter({ hasText: 'English' }).click();
+  await page.getByRole('link', { name: 'English' }).click();
  await page.locator('#Skills').selectOption('Java');
   await page.locator('#countries').selectOption({ label: 'India' });
   await page.locator('#yearbox').selectOption('2005');

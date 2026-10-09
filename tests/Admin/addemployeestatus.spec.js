@@ -9,10 +9,9 @@ test('verifyadmin can admin add job status', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill(logindata.password);
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
-  await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible();
+  await page.waitForURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
   await page.getByRole('link', { name: 'Admin' }).click();
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');
+  await page.getByRole('link', { name: 'System Users' }).click();
   await page.getByRole('listitem').filter({ hasText: 'Job' }).locator('i').click();
   await page.getByRole('menuitem', { name: 'Employment Status' }).click();
   await page.getByRole('button', { name: ' Add' }).click();
