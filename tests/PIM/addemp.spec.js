@@ -10,7 +10,7 @@ await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/lo
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
   await page.getByRole('button', { name: 'Login' }).click();
-  //await page.getByRole('link', { name: 'PIM' }).click();
+  await page.getByRole('link', { name: 'PIM' }).click();
   await page.getByRole('link', { name: 'Add Employee' }).click();
   await page.getByRole('textbox', { name: 'First Name' }).click();
   await page.getByRole('textbox', { name: 'First Name' }).fill(faker.person.firstName());

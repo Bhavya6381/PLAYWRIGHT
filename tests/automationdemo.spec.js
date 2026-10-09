@@ -9,7 +9,7 @@ test('verify registration with valid credentials', async ({ page }) => {
   await page.locator('textarea').fill('Bengaluru');
   await page.locator('input[type="email"]').fill('xyz@gmail.com');
   await page.locator('input[type="tel"]').fill('0838269408');
-  await page.locator('input[value="male"]').check();
+  await page.locator('input[value="Male"]').check();
   await page.locator('#checkbox1').check();
  await page.locator('#msdd').click();
   await page.locator('.ui-menu-item').filter({ hasText: 'English' }).click();
