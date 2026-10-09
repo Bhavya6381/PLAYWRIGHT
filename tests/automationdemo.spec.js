@@ -15,6 +15,7 @@ test('verify registration with valid credentials', async ({ page }) => {
   await page.getByRole('link', { name: 'English' }).click();
  await page.locator('#Skills').selectOption('Java');
   await page.locator('#countries').selectOption({ label: 'India' });
+  
   await page.locator('#yearbox').selectOption('2005');
   await page.locator('#monthbox').selectOption('June');
   await page.locator('#daybox').selectOption('15');
