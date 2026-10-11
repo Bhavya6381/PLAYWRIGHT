@@ -14,4 +14,5 @@ test('verify job categories functionality', async ({ page }) => {
   await page.locator('form').getByRole('textbox').click();
   await page.locator('form').getByRole('textbox').fill('fulll time');
   await page.getByRole('button', { name: 'Save' }).click();
+  
 });
