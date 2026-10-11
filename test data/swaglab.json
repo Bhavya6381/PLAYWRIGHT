@@ -1,0 +1,16 @@
+{
+
+    "password":"secret_sauce",
+
+    "standard" : "standard_user",
+
+    "lockedout":"locked_out_user",
+
+    "problem" : "problem_user",
+
+    "performance" : "performance_glitch_user",
+
+    "error" : "error_user",
+
+    "visitors" : "visitors_user"
+}
