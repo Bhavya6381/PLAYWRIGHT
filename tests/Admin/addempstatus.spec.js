@@ -9,7 +9,6 @@ test('Add Employee Status', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill(logindata.password);
   await page.getByRole('button', { name: 'Login' }).click();
- // await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
   await page.getByRole('link', { name: 'Admin' }).click();
   await page.getByRole('listitem').filter({ hasText: 'Job' }).locator('i').click();
   await page.getByRole('menuitem', { name: 'Employment Status' }).click();
